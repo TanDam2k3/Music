@@ -267,11 +267,6 @@ function randomMusic() {
     isRandomOn = !isRandomOn;
     if(isRandomOn){
         rd.style.color = "#9B4DE0";
-        setInterval(function(){
-            if(toPath.ended){
-                nextToPath();
-            }
-        },1000);
     }
     else{
         rd.style.color = "white";
@@ -380,5 +375,10 @@ function run(){
     getMusic();
     getPath(1);
     setInterval(handleTimeMusicFirst,1000);
+    setInterval(function(){
+        if(toPath.ended){
+            nextToPath();
+        }
+    },1000);
 }
 run();
